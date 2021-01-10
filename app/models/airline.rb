@@ -6,7 +6,7 @@ class Airline < ApplicationRecord
   def slugify
     self.slug = name.parameterize
   end
-  def avr_score
+  def avg_score
     reviews.average(:score).round(2).to_f
   end
 end

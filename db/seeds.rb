@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Airline.create([
+airlines = Airline.create([
   {
     name: "United Airlines",
     image_url: "https://open-flights.s3.amazonaws.com/United-Airlines.png"
@@ -33,3 +33,19 @@ Airline.create([
     image_url: "https://open-flights.s3.amazonaws.com/American-Airlines.png"
   }
 ])
+
+
+reviews = Review.create ([
+  {
+    title: "Great Airline",
+    description: "I had a lovely time",
+    score: 5,
+    airline: airlines.first
+  },
+  {
+    title: "Terrible Airline",
+    description: "I had a bad time",
+    score: 1,
+    airline: airlines.first
+  }
+  ])
