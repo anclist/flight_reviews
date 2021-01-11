@@ -1,6 +1,7 @@
 module Api
   module V1
     class AirlinesController < ApplicationController
+
       def index
         airlines = Airline.all
 
@@ -36,7 +37,7 @@ module Api
       def destroy
         airline = Airline.find_by(slug: params[:slug])
 
-        if airline.destoy
+        if airline.destroy
           head :no_content
         else
           render json: {error: airline.errors.messsages}, status: 422
@@ -46,7 +47,7 @@ module Api
       private
 
       def airline_params
-        params.require(:airline).permmit(:name, :image_url)
+        params.require(:airline).permit(:name, :image_url)
       end
 
       def options
